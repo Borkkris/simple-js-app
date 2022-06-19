@@ -5,17 +5,16 @@ let pokemonList=[
     {name:'Onix', height: 28.10, type:['rock','ground']}
 ]
 
-for (let i = 0 ; i < pokemonList.length; i++){
-document.write(pokemonList[i].name + " ");
-}
-
+//for (let i = 0 ; i < pokemonList.length; i++){
+//document.write(pokemonList[i].name + " ");
+//}
 
 for (let i=0; i < pokemonList.length; i++){
     if(pokemonList[i].height >20){
-    document.write(pokemonList[i].height + "Wow, thats a big Pokemon!");
+    document.write(pokemonList[i].name + pokemonList[i].height + "Wow, thats a big Pokemon!");
 }   else if(pokemonList[i].height <2){
-    document.write(pokemonList[i].height + "small Pokemon");
+    document.write(pokemonList[i].name + pokemonList[i].height + "small Pokemon");
 }   else {
-    document.write(pokemonList[i].height + "normal sized Pokemon");
+    document.write(pokemonList[i].name + pokemonList[i].height + "normal sized Pokemon");
 }
 }
