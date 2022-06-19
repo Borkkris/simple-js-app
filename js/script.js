@@ -9,12 +9,12 @@ let pokemonList=[
 //document.write(pokemonList[i].name + " ");
 //}
 
-for (let i=0; i < pokemonList.length; i++){
+for (let i = 0; i < pokemonList.length; i++){
     if(pokemonList[i].height >20){
-    document.write(pokemonList[i].name + pokemonList[i].height + "Wow, thats a big Pokemon!");
+    document.write(pokemonList[i].name + " " + pokemonList[i].height + " Wow, thats a big Pokemon! ");
 }   else if(pokemonList[i].height <2){
-    document.write(pokemonList[i].name + pokemonList[i].height + "small Pokemon");
+    document.write(pokemonList[i].name + " " + pokemonList[i].height + " small Pokemon ");
 }   else {
-    document.write(pokemonList[i].name + pokemonList[i].height + "normal sized Pokemon");
+    document.write(pokemonList[i].name + " " + pokemonList[i].height + " normal sized Pokemon ");
 }
 }
