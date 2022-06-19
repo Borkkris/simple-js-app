@@ -1,5 +1,4 @@
 let pokemonList=[
-<<<<<<< HEAD
     {name:'Bulbasaur', height:2.04, type:['grass', 'poison']},
     {name:'Charmander', height:2, type:'fire'},
     {name:'Squirtle', height:1.08, type:'water'},
@@ -19,9 +18,3 @@ for (let a=0; a<pokemonList.length; a++){
     console.log(pokemonList[a].height + "normal sized Pokemon");
 }
 }
-=======
-    {name:'Bulbasaur', height:7, type:['grass', 'poison']},
-    {name:'Charmander', height:6, type:'fire'},
-    {name:'Squirtle', height:5, type:'water'}
-]
->>>>>>> parent of 1b3d728 (Update script.js)
