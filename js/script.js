@@ -5,10 +5,14 @@ let pokemonList=[
     {name:'Onix', height: 28.10, type:['rock','ground']}
 ]
 
+//simple loop that iterates over each item in pokemonList. 
 //for (let i = 0 ; i < pokemonList.length; i++){
 //document.write(pokemonList[i].name + " ");
 //}
 
+
+//a for loop that iterates over each item in pokemonList. 
+//I used document.write() inside the loop’s code to write the Pokémon name on my website’s DOM.
 for (let i = 0; i < pokemonList.length; i++){
     if(pokemonList[i].height >20){
     document.write(pokemonList[i].name + " " + pokemonList[i].height + " Wow, thats a big Pokemon! ");
