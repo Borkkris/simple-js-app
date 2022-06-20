@@ -1,7 +1,7 @@
 let pokemonList=[
     {name:'Bulbasaur', height:2.04, type:['grass', 'poison']},
-    {name:'Charmander', height:2, type:'fire'},
-    {name:'Squirtle', height:1.08, type:'water'},
+    {name:'Charmander', height:2, type:['fire']},
+    {name:'Squirtle', height:1.08, type:['water']},
     {name:'Onix', height: 28.10, type:['rock','ground']}
 ]
 
@@ -15,10 +15,10 @@ let pokemonList=[
 //I used document.write() inside the loop’s code to write the Pokémon name on my website’s DOM.
 for (let i = 0; i < pokemonList.length; i++){
     if(pokemonList[i].height >20){
-    document.write(pokemonList[i].name + " " + pokemonList[i].height + " Wow, thats a big Pokemon! ");
+    document.write("Name: " + pokemonList[i].name + " Height: " + pokemonList[i].height + " Wow, thats a big Pokemon! ");
 }   else if(pokemonList[i].height <2){
-    document.write(pokemonList[i].name + " " + pokemonList[i].height + " small Pokemon ");
+    document.write("Name: " + pokemonList[i].name + " Height: " + pokemonList[i].height + " small Pokemon <br>");
 }   else {
-    document.write(pokemonList[i].name + " " + pokemonList[i].height + " normal sized Pokemon ");
+    document.write("Name: " + pokemonList[i].name + " Height: " + pokemonList[i].height + " normal sized Pokemon <br>");
 }
 }
