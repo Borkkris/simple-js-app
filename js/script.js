@@ -5,6 +5,20 @@ let pokemonList=[
     {name:'Onix', height: 28.10, type:['rock','ground']}
 ]
 
+let pokemonList2=[
+    {name:'Pidgey', height:1, type:['normal', 'flying']},
+    {name:'Ekans', height:6.07, type:['poison']},
+    {name:'Jigglypuff', height:1.08, type:['normal', 'fairy']},
+    {name:'Kabutops', height: 4.03, type:['rock','water']}
+]
+
+let pokemonList3=[
+    {name:'Caterpie', height:1, type:['bug']},
+    {name:'Pikachu', height:1.04, type:['electric']},
+    {name:'Abra', height:2.11, type:['psychic']},
+    {name:'Dragonair', height: 13.01, type:['dragon']}
+]
+
 //simple loop that iterates over each item in pokemonList. 
 //for (let i = 0 ; i < pokemonList.length; i++){
 //document.write(pokemonList[i].name + " ");
@@ -22,18 +36,24 @@ let pokemonList=[
 //     document.write("Name: " + pokemonList[i].name + " Height: " + pokemonList[i].height + " - normal sized Pokemon <br>");
 // }
 // }
-// basic funktion
-function printArrayDetails(){
-    for (let i = 0; i < pokemonList.length; i++){
-        if(pokemonList[i].height >20){
-        document.write("Name: " + pokemonList[i].name + " Height: " + pokemonList[i].height + " - Wow, thats a big Pokemon! <br><br>");
-        }   else if(pokemonList[i].height <2){
-            document.write("Name: " + pokemonList[i].name + " Height: " + pokemonList[i].height + " - small Pokemon <br>");
+
+// basic function with the parameter "list" so the program assumes that list=pokemonList
+// create a paragraph withg <p></p>
+function printArrayDetails(list){
+    for (let i = 0; i < list.length; i++){
+        if(list[i].height >13){
+        document.write("<p>" + "Name: " + list[i].name + " Height: " + list[i].height + " - Wow, thats a big Pokemon! " + "Type: " + list[i].type + "</p>" + "<br>");
+        }   else if(list[i].height <4){
+            document.write("<p>" + "Name: " + list[i].name + " Height: " + list[i].height + " - small Pokemon " + "Type: " + list[i].type + "</p>" + "<br>");
         }   else {
-            document.write("Name: " + pokemonList[i].name + " Height: " + pokemonList[i].height + " - normal sized Pokemon <br>");
+            document.write("<p>" + "Name: " + list[i].name + " Height: " + list[i].height + " - normal sized Pokemon " + "Type: " + list[i].type + "</p>" + "<br>");
         }
     }
 }
 
-printArrayDetails()
-printArrayDetails()
+//the two function no longer have empty parentheses: 
+//one of them contains the pokemonList array, while the other contains the pokemonList2 array. 
+//This tells the function to execute using these two values as inputs, or arguments.
+printArrayDetails(pokemonList)
+printArrayDetails(pokemonList2)
+printArrayDetails(pokemonList3)
