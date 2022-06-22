@@ -15,7 +15,7 @@ let pokemonList=[
 //I used document.write() inside the loop’s code to write the Pokémon name on my website’s DOM.
 for (let i = 0; i < pokemonList.length; i++){
     if(pokemonList[i].height >20){
-    document.write("Name: " + pokemonList[i].name + " Height: " + pokemonList[i].height + " - Wow, thats a big Pokemon! ");
+    document.write("Name: " + pokemonList[i].name + " Height: " + pokemonList[i].height + " - Wow, thats a big Pokemon! <br>");
 }   else if(pokemonList[i].height <2){
     document.write("Name: " + pokemonList[i].name + " Height: " + pokemonList[i].height + " - small Pokemon <br>");
 }   else {
