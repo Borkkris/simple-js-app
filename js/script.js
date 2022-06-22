@@ -1,15 +1,15 @@
 let pokemonList=[
-    {name:'Bulbasaur', height:2.04, type:['grass', 'poison']},
+    {name:'Bulbasaur', height:2.04, type:['grass', ' poison']},
     {name:'Charmander', height:2, type:['fire']},
     {name:'Squirtle', height:1.08, type:['water']},
-    {name:'Onix', height: 28.10, type:['rock','ground']}
+    {name:'Onix', height: 28.10, type:['rock',' ground']}
 ]
 
 let pokemonList2=[
-    {name:'Pidgey', height:1, type:['normal', 'flying']},
+    {name:'Pidgey', height:1, type:['normal', ' flying']},
     {name:'Ekans', height:6.07, type:['poison']},
-    {name:'Jigglypuff', height:1.08, type:['normal', 'fairy']},
-    {name:'Kabutops', height: 4.03, type:['rock','water']}
+    {name:'Jigglypuff', height:1.08, type:['normal', ' airy']},
+    {name:'Kabutops', height: 4.03, type:['rock',' water']}
 ]
 
 let pokemonList3=[
@@ -42,11 +42,11 @@ let pokemonList3=[
 function printArrayDetails(list){
     for (let i = 0; i < list.length; i++){
         if(list[i].height >13){
-        document.write("<p>" + "Name: " + list[i].name + " Height: " + list[i].height + " - Wow, thats a big Pokemon! " + "Type: " + list[i].type + "</p>" + "<br>");
+        document.write("<p>" + "Name: " + list[i].name + " Height: " + list[i].height + " - Wow, thats a big Pokemon! " + "- Type: " + list[i].type + "</p>" + "<br>");
         }   else if(list[i].height <4){
-            document.write("<p>" + "Name: " + list[i].name + " Height: " + list[i].height + " - small Pokemon " + "Type: " + list[i].type + "</p>" + "<br>");
+            document.write("<p>" + "Name: " + list[i].name + " Height: " + list[i].height + " - small Pokemon " + "- Type: " + list[i].type + "</p>" + "<br>");
         }   else {
-            document.write("<p>" + "Name: " + list[i].name + " Height: " + list[i].height + " - normal sized Pokemon " + "Type: " + list[i].type + "</p>" + "<br>");
+            document.write("<p>" + "Name: " + list[i].name + " Height: " + list[i].height + " - normal sized Pokemon " + "- Type: " + list[i].type + "</p>" + "<br>");
         }
     }
 }
