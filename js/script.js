@@ -33,17 +33,17 @@ let pokemonList=[
 
 // basic function with the parameter "list" so the program assumes that list=pokemonList
 // create a paragraph withg <p></p>
-function printArrayDetails(list){
-    for (let i = 0; i < list.length; i++){
-        if(list[i].height >13){
-        document.write("<p>" + "Name: " + list[i].name + " Height: " + list[i].height + " - Wow, thats a big Pokemon! " + "- Type: " + list[i].type + "</p>" + "<br>");
-        }   else if(list[i].height <4){
-            document.write("<p>" + "Name: " + list[i].name + " Height: " + list[i].height + " - small Pokemon " + "- Type: " + list[i].type + "</p>" + "<br>");
-        }   else {
-            document.write("<p>" + "Name: " + list[i].name + " Height: " + list[i].height + " - normal sized Pokemon " + "- Type: " + list[i].type + "</p>" + "<br>");
-        }
-    }
-}
+// function printArrayDetails(list){
+//     for (let i = 0; i < list.length; i++){
+//         if(list[i].height >13){
+//         document.write("<p>" + "Name: " + list[i].name + " Height: " + list[i].height + " - Wow, thats a big Pokemon! " + "- Type: " + list[i].type + "</p>" + "<br>");
+// }           else if(list[i].height <4){
+//             document.write("<p>" + "Name: " + list[i].name + " Height: " + list[i].height + " - small Pokemon " + "- Type: " + list[i].type + "</p>" + "<br>");
+// }           else {
+//             document.write("<p>" + "Name: " + list[i].name + " Height: " + list[i].height + " - normal sized Pokemon " + "- Type: " + list[i].type + "</p>" + "<br>");
+// }
+// }
+// }
 
 //the two function no longer have empty parentheses: 
 //one of them contains the pokemonList array, while the other contains the pokemonList2 array. 
@@ -56,10 +56,11 @@ function printArrayDetails(list){
     pokemonList.forEach(function(pokemon) {
         if(pokemon.height >13){
         document.write("<p>" + "Name: " + pokemon.name + " Height: " + pokemon.height + " - Wow, thats a big Pokemon! " + "- Type: " + pokemon.type + "</p>" + "<br>");
-        }   else if(pokemon.height <4){
+}   
+            else if(pokemon.height <4){
             document.write("<p>" + "Name: " + pokemon.name + " Height: " + pokemon.height + " - small Pokemon " + "- Type: " + pokemon.type + "</p>" + "<br>");
-        }   else {
-            document.write("<p>" + "Name: " + pokemon.name + " Height: " + pokemon.height + " - normal sized Pokemon " + "- Type: " + pokemon.type + "</p>" + "<br>");
-        }
-    //document.write("<p>" + "Name: " + pokemon.name + " Height: " + pokemon.height + "- Type: " + pokemon.type);
+}   
+                else {
+                document.write("<p>" + "Name: " + pokemon.name + " Height: " + pokemon.height + " - normal sized Pokemon " + "- Type: " + pokemon.type + "</p>" + "<br>");
+}
 });
