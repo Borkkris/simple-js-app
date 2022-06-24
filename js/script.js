@@ -2,17 +2,11 @@ let pokemonList=[
     {name:'Bulbasaur', height:2.04, type:['grass', ' poison']},
     {name:'Charmander', height:2, type:['fire']},
     {name:'Squirtle', height:1.08, type:['water']},
-    {name:'Onix', height: 28.10, type:['rock',' ground']}
-]
-
-let pokemonList2=[
+    {name:'Onix', height: 28.10, type:['rock',' ground']},
     {name:'Pidgey', height:1, type:['normal', ' flying']},
     {name:'Ekans', height:6.07, type:['poison']},
     {name:'Jigglypuff', height:1.08, type:['normal', ' airy']},
-    {name:'Kabutops', height: 4.03, type:['rock',' water']}
-]
-
-let pokemonList3=[
+    {name:'Kabutops', height: 4.03, type:['rock',' water']},
     {name:'Caterpie', height:1, type:['bug']},
     {name:'Pikachu', height:1.04, type:['electric']},
     {name:'Abra', height:2.11, type:['psychic']},
@@ -54,6 +48,18 @@ function printArrayDetails(list){
 //the two function no longer have empty parentheses: 
 //one of them contains the pokemonList array, while the other contains the pokemonList2 array. 
 //This tells the function to execute using these two values as inputs, or arguments.
-printArrayDetails(pokemonList)
-printArrayDetails(pokemonList2)
-printArrayDetails(pokemonList3)
+// printArrayDetails(pokemonList)
+// printArrayDetails(pokemonList2)
+// printArrayDetails(pokemonList3)
+
+//forEach loop from Exercise 5
+    pokemonList.forEach(function(pokemon) {
+        if(pokemon.height >13){
+        document.write("<p>" + "Name: " + pokemon.name + " Height: " + pokemon.height + " - Wow, thats a big Pokemon! " + "- Type: " + pokemon.type + "</p>" + "<br>");
+        }   else if(pokemon.height <4){
+            document.write("<p>" + "Name: " + pokemon.name + " Height: " + pokemon.height + " - small Pokemon " + "- Type: " + pokemon.type + "</p>" + "<br>");
+        }   else {
+            document.write("<p>" + "Name: " + pokemon.name + " Height: " + pokemon.height + " - normal sized Pokemon " + "- Type: " + pokemon.type + "</p>" + "<br>");
+        }
+    //document.write("<p>" + "Name: " + pokemon.name + " Height: " + pokemon.height + "- Type: " + pokemon.type);
+});
