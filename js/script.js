@@ -53,14 +53,45 @@ let pokemonList=[
 // printArrayDetails(pokemonList3)
 
 //forEach loop from Exercise 5
-    pokemonList.forEach(function(pokemon) {
-        if(pokemon.height >13){
-        document.write("<p>" + "Name: " + pokemon.name + " Height: " + pokemon.height + "- Type: " + pokemon.type + " - Wow, thats a big Pokemon! " + "</p>" + "<br>");
+pokemonList.forEach(function(list) {
+    if(list.height >13){
+    document.write("<p>" + "Name: " + list.name + " Height: " + list.height + "- Type: " + list.type + " - Wow, thats a big Pokemon! " + "</p>" + "<br>");
 }   
-            else if(pokemon.height <4){
-            document.write("<p>" + "Name: " + pokemon.name + " Height: " + pokemon.height + "- Type: " + pokemon.type + " - small Pokemon " + "</p>" + "<br>");
+        else if(list.height <4){
+        document.write("<p>" + "Name: " + list.name + " Height: " + list.height + "- Type: " + list.type + " - small Pokemon " + "</p>" + "<br>");
 }   
-                else {
-                document.write("<p>" + "Name: " + pokemon.name + " Height: " + pokemon.height + "- Type: " + pokemon.type + " - normal sized Pokemon " + "</p>" + "<br>");
+            else {
+            document.write("<p>" + "Name: " + list.name + " Height: " + list.height + "- Type: " + list.type + " - normal sized Pokemon " + "</p>" + "<br>");
 }
 });
+
+//wrapping my pokemonList array in an IIFE from Exercise 5
+let pokemonRepository = (function() {
+    let pokemonList=[
+    {name:'Bulbasaur', height:2.04, type:['grass', ' poison']},
+    {name:'Charmander', height:2, type:['fire']},
+    {name:'Squirtle', height:1.08, type:['water']},
+    {name:'Onix', height: 28.10, type:['rock',' ground']},
+    {name:'Pidgey', height:1, type:['normal', ' flying']},
+    {name:'Ekans', height:6.07, type:['poison']},
+    {name:'Jigglypuff', height:1.08, type:['normal', ' airy']},
+    {name:'Kabutops', height: 4.03, type:['rock',' water']},
+    {name:'Caterpie', height:1, type:['bug']},
+    {name:'Pikachu', height:1.04, type:['electric']},
+    {name:'Abra', height:2.11, type:['psychic']},
+    {name:'Dragonair', height: 13.01, type:['dragon']}
+]
+    return {
+
+        getAll: function(){
+            return pokemonList;
+        },
+        add: function(pokemon) {
+            pokemonList.push(pokemon);
+        
+        }
+    }
+})()
+
+pokemonRepository.add({name: 'Metapod', height: 2.04, type:['bug']});
+document.write(pokemonRepository.getAll());
