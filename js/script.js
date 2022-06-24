@@ -55,12 +55,12 @@ let pokemonList=[
 //forEach loop from Exercise 5
     pokemonList.forEach(function(pokemon) {
         if(pokemon.height >13){
-        document.write("<p>" + "Name: " + pokemon.name + " Height: " + pokemon.height + " - Wow, thats a big Pokemon! " + "- Type: " + pokemon.type + "</p>" + "<br>");
+        document.write("<p>" + "Name: " + pokemon.name + " Height: " + pokemon.height + "- Type: " + pokemon.type + " - Wow, thats a big Pokemon! " + "</p>" + "<br>");
 }   
             else if(pokemon.height <4){
-            document.write("<p>" + "Name: " + pokemon.name + " Height: " + pokemon.height + " - small Pokemon " + "- Type: " + pokemon.type + "</p>" + "<br>");
+            document.write("<p>" + "Name: " + pokemon.name + " Height: " + pokemon.height + "- Type: " + pokemon.type + " - small Pokemon " + "</p>" + "<br>");
 }   
                 else {
-                document.write("<p>" + "Name: " + pokemon.name + " Height: " + pokemon.height + " - normal sized Pokemon " + "- Type: " + pokemon.type + "</p>" + "<br>");
+                document.write("<p>" + "Name: " + pokemon.name + " Height: " + pokemon.height + "- Type: " + pokemon.type + " - normal sized Pokemon " + "</p>" + "<br>");
 }
 });
