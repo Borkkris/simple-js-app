@@ -52,18 +52,6 @@ let pokemonList=[
 // printArrayDetails(pokemonList2)
 // printArrayDetails(pokemonList3)
 
-//forEach loop from Exercise 5
-pokemonList.forEach(function(list) {
-    if(list.height >13){
-    document.write("<p>" + "Name: " + list.name + " Height: " + list.height + "- Type: " + list.type + " - Wow, thats a big Pokemon! " + "</p>" + "<br>");
-}   
-        else if(list.height <4){
-        document.write("<p>" + "Name: " + list.name + " Height: " + list.height + "- Type: " + list.type + " - small Pokemon " + "</p>" + "<br>");
-}   
-            else {
-            document.write("<p>" + "Name: " + list.name + " Height: " + list.height + "- Type: " + list.type + " - normal sized Pokemon " + "</p>" + "<br>");
-}
-});
 
 //wrapping my pokemonList array in an IIFE from Exercise 5
 let pokemonRepository = (function() {
@@ -95,3 +83,16 @@ let pokemonRepository = (function() {
 
 pokemonRepository.add({name: 'Metapod', height: 2.04, type:['bug']});
 document.write(pokemonRepository.getAll());
+
+//forEach loop from Exercise 5
+pokemonList.forEach(function(list) {
+    if(list.height >13){
+    document.write("<p>" + "Name: " + list.name + " Height: " + list.height + "- Type: " + list.type + " - Wow, thats a big Pokemon! " + "</p>" + "<br>");
+}   
+        else if(list.height <4){
+        document.write("<p>" + "Name: " + list.name + " Height: " + list.height + "- Type: " + list.type + " - small Pokemon " + "</p>" + "<br>");
+}   
+            else {
+            document.write("<p>" + "Name: " + list.name + " Height: " + list.height + "- Type: " + list.type + " - normal sized Pokemon " + "</p>" + "<br>");
+}
+});
