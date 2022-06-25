@@ -79,7 +79,7 @@ let pokemonRepository = (function() {
         }
     }
 })()
-
+//adds an object to pokemonRepository
 pokemonRepository.add({name: 'Metapod', height: 2.04, type:['bug']});
 
 //forEach loop from Exercise 5
