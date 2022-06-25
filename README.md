@@ -1,6 +1,6 @@
 # Chrisrtians simple-js-app Pokedex
 
-This is my Pokedex-App I created as a student for CareerFoundry.
+This is my Pokedex-App I created as a fellow for CareerFoundry.
 It'll show all the pokemon with its name, height and type.
 
 ##Tech Tools:
