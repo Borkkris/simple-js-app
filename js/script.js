@@ -52,7 +52,7 @@
 // printArrayDetails(pokemonList2)
 // printArrayDetails(pokemonList3)
 
-//wrapping my pokemonList array in an IIFE from Exercise 5
+//wrapping my pokemonList-array in an IIFE from Exercise 5
 let pokemonRepository = (function() {
     let pokemonList=[
     {name:'Bulbasaur', height:2.04, type:['grass', ' poison']},
@@ -85,12 +85,12 @@ pokemonRepository.add({name: 'Metapod', height: 2.04, type:['bug']});
 //forEach loop from Exercise 5
 pokemonRepository.getAll().forEach(function(list) {
     if(list.height >13){
-    document.write("<p>" + "Name: " + list.name + " Height: " + list.height + "- Type: " + list.type + " - Wow, thats a big Pokemon! " + "</p>" + "<br>");
+    document.write("<p>" + list.name + " - Height: " + list.height + " - Type: " + list.type + " - Wow, thats a big Pokemon! " + "</p>" + "<br>");
 }   
         else if(list.height <4){
-        document.write("<p>" + "Name: " + list.name + " Height: " + list.height + "- Type: " + list.type + " - small Pokemon " + "</p>" + "<br>");
+        document.write("<p>" + list.name + " - Height: " + list.height + " - Type: " + list.type + " - small Pokemon " + "</p>" + "<br>");
 }   
             else {
-            document.write("<p>" + "Name: " + list.name + " Height: " + list.height + "- Type: " + list.type + " - normal sized Pokemon " + "</p>" + "<br>");
+            document.write("<p>" + list.name + " - Height: " + list.height + " - Type: " + list.type + " - normal sized Pokemon " + "</p>" + "<br>");
 }
 });
