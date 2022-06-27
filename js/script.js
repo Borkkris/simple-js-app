@@ -84,7 +84,7 @@ let pokemonRepository = (function() {
     function getAll() { //show all objects in pokemonList
         return pokemonList;
     }
-    function addListItem(pokemon) {
+    function addListItem(pokemon) { //from Exercise 6
         let pokemonList = document.querySelector('.pokemon-list'); //(created a new variable: pokemonList) and I select the list with the class pokemon-list from the HTML
         let listpokemon = document.createElement('li'); //(created a new variable: listpokemon) an li element in the parent Element 
         let button = document.createElement('button'); //created a button in the li Element
