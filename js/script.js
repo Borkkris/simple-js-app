@@ -55,7 +55,7 @@
 //wrapping my pokemonList-array in an IIFE from Exercise 5
 let pokemonRepository = (function() {
     let pokemonList=[
-    {name:'Bulbasaur', height:2.04, type:['grass', ' poison']},
+    {name:'Bulbasaur', height:2.04, type:['grass', ' poison']}, //all pokemon of my pokemonList in here
     {name:'Charmander', height:2, type:['fire']},
     {name:'Squirtle', height:1.08, type:['water']},
     {name:'Onix', height: 28.10, type:['rock',' ground']},
@@ -68,29 +68,43 @@ let pokemonRepository = (function() {
     {name:'Abra', height:2.11, type:['psychic']},
     {name:'Dragonair', height: 13.01, type:['dragon']}
 ]
-    return {
-
-        getAll: function(){
-            return pokemonList;
-        },
-        add: function(pokemon) {
-            pokemonList.push(pokemon);
-        
+    function add(pokemon) {
+        if (
+            typeof pokemon === 'object' &&  //when type from 'pokemon' is a object
+            'name' in pokemon &&            // and "name" in 'pokemon' 
+            'height' in pokemon &&          // and "height" in 'pokemon'
+            'types' in pokemon              // and "types" in 'pokemon'
+        ) {
+            pokemonList.push(pokemon);         // then push it to pokemonList
+        }   else {
+            console.log('pokemon is not correct') //if not then write this 'pokemon is ... '
         }
     }
+
+    function getAll() { //show all objects in pokemonList
+        return pokemonList;
+    }
+    function addListItem(pokemon) {
+        let pokemonList = document.querySelector('.pokemon-list'); //(created a new variable: pokemonList) and I select the list with the class pokemon-list from the HTML
+        let listpokemon = document.createElement('li'); //(created a new variable: listpokemon) an li element in the parent Element 
+        let button = document.createElement('button'); //created a button in the li Element
+        button.innerText = pokemon.name; //rendered the button to show the pokemon name
+        button.classList.add('button'); //set a class to style the button in CSS
+        listpokemon.appendChild(button); //append a button to the list-element
+        pokemonList.appendChild(listpokemon); //append the listpokemon to the pokemonList
+    }
+    return {
+        add: add,
+        getAll: getAll,
+        addListItem: addListItem,
+    };
 })()
+
 //adds an object to pokemonRepository
 pokemonRepository.add({name: 'Metapod', height: 2.04, type:['bug']});
+console.log(pokemonRepository.getAll());
 
 //forEach loop from Exercise 5
-pokemonRepository.getAll().forEach(function(list) {
-    if(list.height >13){
-    document.write("<p>" + list.name + " - Height: " + list.height + " - Type: " + list.type + " - Wow, thats a big Pokemon! " + "</p>" + "<br>");
-}   
-        else if(list.height <4){
-        document.write("<p>" + list.name + " - Height: " + list.height + " - Type: " + list.type + " - small Pokemon " + "</p>" + "<br>");
-}   
-            else {
-            document.write("<p>" + list.name + " - Height: " + list.height + " - Type: " + list.type + " - normal sized Pokemon " + "</p>" + "<br>");
-}
+pokemonRepository.getAll().forEach(function(pokemon) {
+    pokemonRepository.addListItem(pokemon);
 });
