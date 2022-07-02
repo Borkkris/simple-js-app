@@ -1,25 +1,17 @@
 //wrapping my pokemonList-array in an IIFE from Exercise 5
 let pokemonRepository = (function() {
-    let pokemonList=[
-    {name:'Bulbasaur', height:2.04, type:['grass', ' poison']}, //all pokemon of my pokemonList in here
-    {name:'Charmander', height:2, type:['fire']},
-    {name:'Squirtle', height:1.08, type:['water']},
-    {name:'Onix', height: 28.10, type:['rock',' ground']},
-    {name:'Pidgey', height:1, type:['normal', ' flying']},
-    {name:'Ekans', height:6.07, type:['poison']},
-    {name:'Jigglypuff', height:1.08, type:['normal', ' airy']},
-    {name:'Kabutops', height: 4.03, type:['rock',' water']},
-    {name:'Caterpie', height:1, type:['bug']},
-    {name:'Pikachu', height:1.04, type:['electric']},
-    {name:'Abra', height:2.11, type:['psychic']},
-    {name:'Dragonair', height: 13.01, type:['dragon']}
-]
+    let pokemonList=[];
+    let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
+
     function add(pokemon) {
         if (
             typeof pokemon === 'object' &&  //when type from 'pokemon' is a object
-            'name' in pokemon &&            // and "name" in 'pokemon' 
-            'height' in pokemon &&          // and "height" in 'pokemon'
-            'types' in pokemon              // and "types" in 'pokemon'
+            'name' in pokemon 
+            // &&            // and "name" in 'pokemon' 
+            // 'height' in pokemon &&          // and "height" in 'pokemon'
+            // 'types' in pokemon              // and "types" in 'pokemon'
+            // "detailsUrl" in pokemon
+
         ) {
             pokemonList.push(pokemon);         // then push it to pokemonList
         }   else {
@@ -38,34 +30,67 @@ let pokemonRepository = (function() {
         button.classList.add('button'); //set a class to style the button in CSS
         listpokemon.appendChild(button); //append a button to the list-element
         pokemonList.appendChild(listpokemon); //append the listpokemon to the pokemonList
-        eventListener(button, pokemon); // added eventListener to the variable 'button'
+        button.addEventListener("click", function(event) {
+        showDetails(pokemon); // added eventListener to the variable 'button'
+    });
+}
+    //fetch-function //returns all the pokemon in the console
+    function loadList() {
+        return fetch(apiUrl).then(function (response) { //the promise
+        return response.json();//convert the responde to a json
+        }).then(function (json) {
+        json.results.forEach(function (item) { //take the json and run a forEach loop on it (parameter: item)
+            let pokemon = { //lets map a Pokemon variable
+            name: item.name, //return the name in the parameter item (first key)
+            detailsUrl: item.url //return the url (the pokemon details)
+            };
+            add(pokemon);//
+            console.log(pokemon);
+        });
+        }).catch(function (e) {
+        console.error(e);
+        });
     }
-    // by clicking the button the details of the pokemon were shown
-    function eventListener (button, pokemon){
-        button.addEventListener("click", function(){
-            showDetails(pokemon);
+
+    function loadDetails(item) {
+    let url = item.detailsUrl;
+        return fetch(url).then(function (response) { //the promise
+            return response.json();
+        }).then(function (details) { //when you get me the json then give me the parameter called details
+        // Now we add the details to the item
+        item.imageUrl = details.sprites.front_default; //tiny images of the Pokemon
+        item.height = details.height; //heights
+        item.types = details.types; //types
+        }).catch(function (e) {
+        console.error(e);
         });
     }
 
     function showDetails(pokemon) {
-        console.log(pokemon);
+    loadDetails(pokemon).then(function () {
+    console.log(pokemon);
+    });
     }
+    
     //return - short if the keys are the same
     return {
         add,
         getAll,
         addListItem,
+        loadList,
+        loadDetails,
         showDetails,
     };
 })()
 
 //adds an object to pokemonRepository
-pokemonRepository.add({name: 'Metapod', height: 2.04, type:['bug']});
-console.log(pokemonRepository.getAll());
-
-//forEach loop from Exercise 5 - runs over the pokemonRepository and the addListItem-function in a loop
-pokemonRepository.getAll().forEach(function(pokemon) {
+pokemonRepository.loadList().then(function() {
+  // Now the data is loaded!
+  //forEach loop from Exercise 5 - runs over the pokemonRepository and the addListItem-function in a loop
+  pokemonRepository.getAll().forEach(function(pokemon){
     pokemonRepository.addListItem(pokemon);
+  });
 });
 
+/////////////////////////////////////////
 
