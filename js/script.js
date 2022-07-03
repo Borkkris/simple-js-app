@@ -71,7 +71,7 @@ let pokemonRepository = (function() {
     console.log(pokemon);
     });
     }
-    
+
     //return - short if the keys are the same
     return {
         add,
@@ -91,6 +91,4 @@ pokemonRepository.loadList().then(function() {
     pokemonRepository.addListItem(pokemon);
   });
 });
-
-/////////////////////////////////////////
 
