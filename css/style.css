@@ -68,7 +68,7 @@ ul {
 .pokemon-list {
     list-style: none;
     display: grid;
-
+    padding: 0;
 }
 
 #modal-container {
