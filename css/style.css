@@ -1,9 +1,16 @@
 body {
+  padding: 30px;
   font-size: 16px;
   display:grid;
   grid-template-columns: auto;
   justify-content:center ;
   background-color: rgb(187, 84, 84);
+}
+
+#Pokeball{
+  display: block;
+  height: 50px;
+  margin: 0 auto;
 }
 
 h1 {
