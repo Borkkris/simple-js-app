@@ -16,11 +16,14 @@ body {
 h1 {
     text-align: center;
     letter-spacing: 6px;
+    margin-bottom: 20px;
 }
 
 h5 {
     text-align: center;
     letter-spacing: 0.5px;
+    margin: 0;
+    padding-bottom: 20px
 }
 
 button {
@@ -62,7 +65,7 @@ ul {
   margin: 0;
   align-content: center;
   grid-template-columns: auto auto auto auto auto;
-  grid-gap: 3px;
+  grid-gap: 30px;
 }
 
 .pokemon-list {
