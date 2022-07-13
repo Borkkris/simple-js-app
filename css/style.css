@@ -1,25 +1,63 @@
 h1 {
-    padding: 20px;
+    text-align: center;
+    letter-spacing: 10px;
+}
+
+h5 {
+    text-align: center;
+    letter-spacing: 0.5px;
 }
 
 button {
-    background-color: white;
+    background-color: rgb(205, 163, 163);
     border: none;
     color: black;
-    padding: 16px 32px;
+    padding: 16px 30px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 4px 0px;
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
     cursor: pointer;
     border: 2px solid #4caf50;
+    width:15em;
+}
+
+body{
+  font-size: 16px;
+  display:grid;
+  grid-template-columns: auto;
+  justify-content:center ;
+  background-color: rgb(199, 198, 198);
+}
+
+button:hover {
+  background-color: rgb(190, 139, 139);
+}
+
+p {
+  padding: 20px;
+  width: auto;
+  letter-spacing: 1px;
+  margin:0;
+  text-align: center;
+}
+
+ul {
+  margin: 0;
+  align-content: center;
+  grid-template-columns: auto auto auto auto auto;
+  grid-template-rows: auto auto auto auto;
+  grid-gap: 3px;
 }
 
 .pokemon-list {
     list-style: none;
+    display: grid;
+
 }
 
 #modal-container {
