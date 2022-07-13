@@ -1,3 +1,11 @@
+body {
+  font-size: 16px;
+  display:grid;
+  grid-template-columns: auto;
+  justify-content:center ;
+  background-color: rgb(187, 84, 84);
+}
+
 h1 {
     text-align: center;
     letter-spacing: 10px;
@@ -9,7 +17,7 @@ h5 {
 }
 
 button {
-    background-color: rgb(205, 163, 163);
+    background-color: rgb(219, 169, 169);
     border: none;
     color: black;
     padding: 16px 30px;
@@ -17,25 +25,22 @@ button {
     text-decoration: none;
     display: inline-block;
     font-size: 18px;
-    font-weight: bold;
     margin: 4px 0px;
     -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
     cursor: pointer;
-    border: 2px solid #4caf50;
+    border: 2px solid #000000;
     width:15em;
-}
-
-body{
-  font-size: 16px;
-  display:grid;
-  grid-template-columns: auto;
-  justify-content:center ;
-  background-color: rgb(199, 198, 198);
+    transition: all 0.6s;
 }
 
 button:hover {
-  background-color: rgb(190, 139, 139);
+  background-color: rgb(185, 134, 134);
+  color: rgb(237, 191, 73);
+  border: 2px solid rgb(237, 191, 73);
+  font-weight: bold;
+  letter-spacing: 1px;
+  transform: scale(1.02);
 }
 
 p {
@@ -94,6 +99,7 @@ ul {
   width: 100%;
   max-width: 700px;
   text-align: left;
+  
 }
 
 .modal-close {
@@ -104,6 +110,12 @@ ul {
   color: #777;
   text-decoration: underline;
   cursor: pointer;
+  text-decoration: none;
+}
+
+.modal-close:hover {
+  transition: transform 1s;
+  transform: scale(2);
 }
 
 .modal h1 {
