@@ -55,7 +55,6 @@ ul {
   margin: 0;
   align-content: center;
   grid-template-columns: auto auto auto auto auto;
-  grid-template-rows: auto auto auto auto;
   grid-gap: 3px;
 }
 
@@ -86,7 +85,7 @@ ul {
   overflow: auto; 
   
   /* this is used to center the modal */
-  display: grid;
+  display: inline;
   text-align: center;
 }
 
@@ -111,11 +110,11 @@ ul {
   text-decoration: underline;
   cursor: pointer;
   text-decoration: none;
+  transition: all 1s;
 }
 
 .modal-close:hover {
-  transition: transform 1s;
-  transform: scale(2);
+  transform: scale(1.5);
 }
 
 .modal h1 {
