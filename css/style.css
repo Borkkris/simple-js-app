@@ -65,7 +65,7 @@ ul {
   margin: 0;
   align-content: center;
   grid-template-columns: auto auto auto auto auto;
-  grid-gap: 30px;
+  grid-gap: 10px;
 }
 
 .pokemon-list {
