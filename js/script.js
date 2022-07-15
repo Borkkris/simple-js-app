@@ -148,15 +148,15 @@ let pokemonRepository = (function() {
     }
 
     function hideDetails() {
-    modalContainer.classList.remove('is-visible');
+    modalContainer.classList.remove('is-visible'); // removes the class is-visible
   }
-
+// closes the modal by pressing esc
   window.addEventListener('keydown', (e) => {
     if (e.key ==='Escape' && modalContainer.classList.contains('is-visible')) {
         hideDetails();
     }
   });
-
+// closes the modal by clicking outside of the modal with the cursor
   modalContainer.addEventListener('click', (e) => {
     let target = e.target;
     if (target === modalContainer) {
@@ -172,7 +172,7 @@ let pokemonRepository = (function() {
         loadList,
         loadDetails,
         showDetails,
-        // showModal
+        // showModal //(for the bootstrap Modal)
     };
 })()
 
