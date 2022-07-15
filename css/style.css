@@ -137,7 +137,7 @@ ul {
   margin-bottom: 0;
 }
 
-@media all and (max-width: 500px) {
+@media all and (max-width: 650px) {
   ul {
     grid-template-columns: auto;
     align-content: center;
@@ -146,9 +146,10 @@ ul {
     letter-spacing: 0px;
   }
 }
-@media all and (min-width: 500px) and (max-width: 750px){
+
+@media all and (min-width: 650px) and (max-width: 810px){
   ul {
-    grid-template-columns: auto auto;
+    grid-template-columns: auto auto auto auto;
     align-content: center;
   }
   h5 {
