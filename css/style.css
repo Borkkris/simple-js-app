@@ -52,14 +52,6 @@ button:hover {
   transform: scale(1.02);
 }
 
-p {
-  padding: 20px;
-  width: auto;
-  letter-spacing: 1px;
-  margin:0;
-  text-align: center;
-}
-
 ul {
   margin: 0;
   align-content: center;
@@ -139,16 +131,16 @@ ul {
     grid-template-columns: auto;
     align-content: center;
   }
-  p {
+  h5 {
     letter-spacing: 0px;
   }
 }
 @media all and (min-width: 500px) and (max-width: 750px){
   ul {
-    grid-template-columns: auto;
+    grid-template-columns: auto auto;
     align-content: center;
   }
-  p {
+  h5 {
     letter-spacing: 0px;
   }
 }
