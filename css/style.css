@@ -40,7 +40,7 @@ button {
   transition-duration: 0.4s;
   cursor: pointer;
   border: 2px solid #000000;
-  width:15em;
+  width:100%;
   transition: all 0.6s;
 }
 
@@ -66,10 +66,6 @@ ul {
   align-content: center;
   grid-template-columns: auto auto auto auto auto;
   grid-gap: 10px;
-}
-
-li {
-
 }
 
 .pokemon-list {
