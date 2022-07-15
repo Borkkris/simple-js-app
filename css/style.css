@@ -14,34 +14,34 @@ body {
 }
 
 h1 {
-    text-align: center;
-    letter-spacing: 6px;
-    margin-bottom: 20px;
+  text-align: center;
+  letter-spacing: 6px;
+  margin-bottom: 20px;
 }
 
 h5 {
-    text-align: center;
-    letter-spacing: 0.5px;
-    margin: 0;
-    padding-bottom: 20px
+  text-align: center;
+  letter-spacing: 0.5px;
+  margin: 0;
+  padding-bottom: 20px
 }
 
 button {
-    background-color: rgb(219, 169, 169);
-    border: none;
-    color: black;
-    padding: 16px 30px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 18px;
-    margin: 4px 0px;
-    -webkit-transition-duration: 0.4s; /* Safari */
-    transition-duration: 0.4s;
-    cursor: pointer;
-    border: 2px solid #000000;
-    width:15em;
-    transition: all 0.6s;
+  background-color: rgb(219, 169, 169);
+  border: none;
+  color: black;
+  padding: 16px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+  margin: 4px 0px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border: 2px solid #000000;
+  width:15em;
+  transition: all 0.6s;
 }
 
 button:hover {
@@ -68,10 +68,14 @@ ul {
   grid-gap: 10px;
 }
 
+li {
+
+}
+
 .pokemon-list {
-    list-style: none;
-    display: grid;
-    padding: 0;
+  list-style: none;
+  display: grid;
+  padding: 0;
 }
 
 #modal-container {
@@ -133,4 +137,16 @@ ul {
 
 .modal p {
   margin-bottom: 0;
+}
+
+@media all and (max-width: 500px) {
+  ul {
+    grid-template-columns: auto;
+    align-content: center;
+  }
+}
+@media all and (min-width: 500px) and (max-width: 750px){
+  ul {
+    grid-template-columns: auto;
+  }
 }
