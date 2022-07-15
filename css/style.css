@@ -1,5 +1,5 @@
 body {
-  padding: 30px;
+  padding: 20px;
   font-size: 16px;
   display: grid;
   grid-template-columns: auto;
@@ -35,13 +35,12 @@ button {
   text-decoration: none;
   display: inline-block;
   font-size: 18px;
-  margin: 4px 0px;
   -webkit-transition-duration: 0.4s; /* Safari */
   transition-duration: 0.4s;
   cursor: pointer;
   border: 2px solid #000000;
-  width:100%;
   transition: all 0.6s;
+  width:100%;
 }
 
 button:hover {
@@ -66,12 +65,12 @@ ul {
   align-content: center;
   grid-template-columns: auto auto auto auto auto;
   grid-gap: 10px;
+  padding: 10px;
 }
 
 .pokemon-list {
   list-style: none;
   display: grid;
-  padding: 0;
 }
 
 #modal-container {
@@ -140,10 +139,16 @@ ul {
     grid-template-columns: auto;
     align-content: center;
   }
+  p {
+    letter-spacing: 0px;
+  }
 }
 @media all and (min-width: 500px) and (max-width: 750px){
   ul {
     grid-template-columns: auto;
     align-content: center;
+  }
+  p {
+    letter-spacing: 0px;
   }
 }
