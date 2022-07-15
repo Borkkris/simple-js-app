@@ -68,6 +68,36 @@ let pokemonRepository = (function() {
         console.error(e);
         });
     }
+    
+    //     function showModal(item) {
+    //     let modalBody = $(".modal-body");
+    //     let modalTitle = $(".modal-title");
+    //     let modalHeader = $(".modal-header");
+        
+    //     modalBody.empty();
+    //     modalTitle.empty();
+
+    //     let nameElement = $("<h1>" + item.name + "</h1>")
+
+    //     let imageElementFront = $('<img class="modal-img" style="width:50%">');
+    //     imageElementFront.attr("src", item.imageUrlFGront);
+    //     let imageElementBack = $('<img class="modal-img" style="width:50%">');
+    //     imageElementBack.attr("src", item.imageUrlBack);
+
+
+    //     let heightElement = $("<p>" + "height: " + details.height + "</p>");
+    //     let weightElement = $("<p>" + "weight: " + details.weight + "</p>");
+    //     let typesElement = $("<p>" + "types: " + details.types + "</p>");
+    //     // let abilitiesElement = $("<p>" + "abilities: " + item.abilities + "</p>");
+
+    //     modatTitle.append(nameElement);
+    //     modalBody.append(imageElementFront);
+    //     modalBody.append(imageElementBack);
+    //     modalBody.append(heightElement);
+    //     modalBody.append(weightElement);
+    //     modalBody.append(typesElement);
+    //     modalBody.append(abilitiesElement);
+    // }
 
     function showDetails(pokemon) {
     loadDetails(pokemon).then(function () {
@@ -142,7 +172,7 @@ let pokemonRepository = (function() {
         loadList,
         loadDetails,
         showDetails,
-
+        // showModal
     };
 })()
 
