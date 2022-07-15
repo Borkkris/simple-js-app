@@ -52,6 +52,19 @@ button:hover {
   transform: scale(1.02);
 }
 
+p {
+  width: auto;
+  letter-spacing: 1px;
+  margin:0;
+  text-align: center;
+}
+
+img {
+  display: block; 
+  margin: auto; 
+  width: 50%; 
+}
+
 ul {
   margin: 0;
   align-content: center;
