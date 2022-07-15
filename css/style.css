@@ -47,9 +47,6 @@ button:hover {
   background-color: rgb(185, 134, 134);
   color: rgb(255, 183, 0);
   border: 2px solid rgb(237, 191, 73);
-  font-weight: bold;
-  letter-spacing: 1px;
-  transform: scale(1.02);
 }
 
 p {
@@ -59,10 +56,11 @@ p {
   text-align: center;
 }
 
-img {
+/* centeres the img */
+img { 
   display: block; 
   margin: auto; 
-  width: 50%; 
+  width: 20%; 
 }
 
 ul {
