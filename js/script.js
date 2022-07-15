@@ -26,9 +26,9 @@ let pokemonRepository = (function() {
     function addListItem(pokemon) { //from Exercise 6
         let pokemonList = document.querySelector('.pokemon-list'); //selects the list with the class pokemon-list from the HTML
         let listpokemon = document.createElement('li'); //(created a new variable: listpokemon) an li element in the parent Element 
-        let button = document.createElement('button'); //created a button in the li Element
+        let button = document.createElement('button-pokemon'); //created a button in the li Element
         button.innerText = pokemon.name; //rendered the button to show the pokemon name
-        button.classList.add('button'); //set a class to style the button in CSS
+        button.classList.add('button-pokemon'); //set a class to style the button in CSS
         listpokemon.appendChild(button); //append a button to the list-element
         pokemonList.appendChild(listpokemon); //append the listpokemon to the pokemonList
         button.addEventListener("click", function(event) {
@@ -76,7 +76,7 @@ let pokemonRepository = (function() {
     let modal = document.createElement('div');
     modal.classList.add('modal');
 
-      let closeButtonElement = document.createElement('button_modal');
+      let closeButtonElement = document.createElement('button');
       closeButtonElement.classList.add('modal-close');
       closeButtonElement.setAttribute('title', 'Close');
       closeButtonElement.innerText = 'X';
