@@ -1,7 +1,7 @@
 body {
   padding: 30px;
   font-size: 16px;
-  display:grid;
+  display: grid;
   grid-template-columns: auto;
   justify-content:center ;
   background-color: rgb(187, 84, 84);
@@ -144,5 +144,6 @@ ul {
 @media all and (min-width: 500px) and (max-width: 750px){
   ul {
     grid-template-columns: auto;
+    align-content: center;
   }
 }
