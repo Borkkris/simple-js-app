@@ -40,10 +40,11 @@ let pokemonRepository = (function() {
 
         pokemonList.appendChild(listpokemon); //append the listpokemon to the pokemonList
 
-        button.addEventListener("click", function(event) {
+        button.addEventListener("click", function(event) { // for my Tutor: why is the event parameter not read?
         showDetails(pokemon); // added eventListener to the variable 'button'
-    });
-}
+        });
+    }
+
     //fetch-function for API
     //Returns all the pokemon in the console
     function loadList() {
@@ -57,9 +58,9 @@ let pokemonRepository = (function() {
             };
             add(pokemon);//
             console.log(pokemon);
-        });
+            });
         }).catch(function (e) {
-        console.error(e);
+          console.error(e);
         });
     }
 
@@ -82,8 +83,8 @@ let pokemonRepository = (function() {
 
     // Bootstrap Modal
     function showModal(pokemon) {
-    let modalBody = $(".modal-body");
     let modalTitle = $(".modal-title");
+    let modalBody = $(".modal-body");
     let modalHeader = $(".modal-header");
 
     modalTitle.empty();
@@ -91,18 +92,21 @@ let pokemonRepository = (function() {
 
     let nameElement = $("<h1>" + pokemon.name + "</h1>");
 
-    let pokemonImage = $('<img class="modal-img" style="width:50%">');
-
-    pokemonImage.attr("src", pokemon.imageUrl);
-
     let heightElement = $("<p>" + "Height: " + pokemon.height + "</p>");
 
     let weightElement = $("<p>" + "Weight: " + pokemon.weight + "</p>");
+
+    let typesElement = $("<p>" + "Types: " + pokemon.types + "</p>");
+
+    let pokemonImage = $('<img class="modal-img" style="width:50%">');
+
+    pokemonImage.attr("src", pokemon.imageUrl);
 
     modalTitle.append(nameElement);
     modalBody.append(pokemonImage);
     modalBody.append(heightElement);
     modalBody.append(weightElement);
+    modalBody.append(typesElement);
 
     $("#pokemon-modal").modal("toggle");
   }
@@ -123,7 +127,7 @@ let pokemonRepository = (function() {
         showDetails,
         // showModal //(for the bootstrap Modal)
     };
-})()
+})();
 
 //final calling of functions to execute repository
 
