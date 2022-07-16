@@ -12,70 +12,76 @@
     <title>Pokédex - 150 Pokémon</title>
 </head>
 <body>
+    <header class="page-header">
+        <nav class="navbar navbar-expand-sm navbar-light">
+            <a class="navbar-brand" href="#">Navigation</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-    <nav class="navbar navbar-expand-sm navbar-light">
-        <a class="navbar-brand" href="#">Navigation</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item active">
-                    <a class="nav-link" href="index.html">Pokémon <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="#">Disabled</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="#">Disabled</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                </li>
-            </ul>
+            <div class="collapse navbar-collapse" id="navbarNav">
+
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.html">Pokémon <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#">Contact</a>
+                    </li>
+                </ul>
+
+            </div>
+        </nav>
+   
+
+        <svg id="Pokeball" viewBox="0 0 649.18 651.56"><defs>
+            <style>.cls-1{fill:#010101;}.cls-2{fill:#ed1e25;}.cls-3{fill:#fff;}</style>
+            </defs><title>Pokéball</title>
+            <path class="cls-1" d="M1007.12,545.21a354.12,354.12,0,0,1,24.34,56.25A323.39,323.39,0,0,1,1013,849.3c-53.62,106.54-168.42,179.59-288,180.51-120.14.92-231.84-69.38-288.12-174.54a323.79,323.79,0,0,1-34.53-104.18c-6.28-40.65-4.19-80.93,4.62-121,3.8-17.24,8.5-34.42,15.56-50.41C448.93,519.86,487.85,470,542.94,433.48,625.15,379,731,362.94,825.07,393.81,903.28,419.48,965.65,475,1007.12,545.21Z" transform="translate(-398.71 -378.26)"/>
+            <path class="cls-2" d="M737.49,407.42C820.58,409.91,899.9,448,959.35,525.34c36.44,47.41,55.5,101.4,59.31,161,.46,7.13-1.91,11.53-7.28,15.33-21.69,15.35-45.07,27.54-69.52,37.86A545.67,545.67,0,0,1,835,772.1c-7.42,1.46-14.9,2.59-22.33,3.95-4.32.8-6.49-.21-8.18-5-15-42.69-52.41-65.47-95.23-57-31.54,6.26-52.37,25.95-62.55,56.34-2,5.84-3.72,7.54-10.19,6.66A528.74,528.74,0,0,1,515.31,746c-29.55-11.51-57.77-25.67-83.77-44-3.23-2.29-3.94-4.74-3.83-8.29A295.24,295.24,0,0,1,578.42,445.32C623.42,420,671.85,407.48,737.49,407.42Z" transform="translate(-398.71 -378.26)"/>
+            <path class="cls-3" d="M1005.15,772.87C972.71,904.18,852.81,1009.8,700.69,999.36,550.07,989,456,870.65,438.07,773.59c12.44,5.84,24.66,11.85,37.1,17.36,48,21.24,98.1,34.87,150,42.35a35.35,35.35,0,0,0,4.21.53c15.89.44,27.15,7.09,38.78,19.09,36.65,37.84,96.61,30.65,126-13.1a9.74,9.74,0,0,1,7.5-4.52,603.9,603.9,0,0,0,153.73-39.54c12.89-5.19,25.37-11.4,38-17.18C997,776.92,1000.55,775.11,1005.15,772.87Z" transform="translate(-398.71 -378.26)"/>
+            <path class="cls-3" d="M725.21,741c29.68-.09,54.31,24.24,54.34,53.7s-24.54,54-54.17,53.89a53.4,53.4,0,0,1-53.61-53.38C671.65,765,695.21,741.09,725.21,741Z" transform="translate(-398.71 -378.26)"/>
+        </svg>
+
+        <h1>Pokédex</h1>
+        <h5>The first 150 Pokémon are listet in this Pokédex</h5>
+
+     </header>
+
+     <main>
+        <ul class="pokemon-list"></ul>
+
+        <div class="modal fade" id="pokemon-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+
+                    <div class="modal-body">
+                    ...
+                    </div>
+
+                    <div class="modal-footer">
+                    </div>
+                </div>
+            </div>
         </div>
-    </nav>
 
-    <svg id="Pokeball" viewBox="0 0 649.18 651.56"><defs>
-        <style>.cls-1{fill:#010101;}.cls-2{fill:#ed1e25;}.cls-3{fill:#fff;}</style>
-        </defs><title>Pokéball</title>
-        <path class="cls-1" d="M1007.12,545.21a354.12,354.12,0,0,1,24.34,56.25A323.39,323.39,0,0,1,1013,849.3c-53.62,106.54-168.42,179.59-288,180.51-120.14.92-231.84-69.38-288.12-174.54a323.79,323.79,0,0,1-34.53-104.18c-6.28-40.65-4.19-80.93,4.62-121,3.8-17.24,8.5-34.42,15.56-50.41C448.93,519.86,487.85,470,542.94,433.48,625.15,379,731,362.94,825.07,393.81,903.28,419.48,965.65,475,1007.12,545.21Z" transform="translate(-398.71 -378.26)"/>
-        <path class="cls-2" d="M737.49,407.42C820.58,409.91,899.9,448,959.35,525.34c36.44,47.41,55.5,101.4,59.31,161,.46,7.13-1.91,11.53-7.28,15.33-21.69,15.35-45.07,27.54-69.52,37.86A545.67,545.67,0,0,1,835,772.1c-7.42,1.46-14.9,2.59-22.33,3.95-4.32.8-6.49-.21-8.18-5-15-42.69-52.41-65.47-95.23-57-31.54,6.26-52.37,25.95-62.55,56.34-2,5.84-3.72,7.54-10.19,6.66A528.74,528.74,0,0,1,515.31,746c-29.55-11.51-57.77-25.67-83.77-44-3.23-2.29-3.94-4.74-3.83-8.29A295.24,295.24,0,0,1,578.42,445.32C623.42,420,671.85,407.48,737.49,407.42Z" transform="translate(-398.71 -378.26)"/>
-        <path class="cls-3" d="M1005.15,772.87C972.71,904.18,852.81,1009.8,700.69,999.36,550.07,989,456,870.65,438.07,773.59c12.44,5.84,24.66,11.85,37.1,17.36,48,21.24,98.1,34.87,150,42.35a35.35,35.35,0,0,0,4.21.53c15.89.44,27.15,7.09,38.78,19.09,36.65,37.84,96.61,30.65,126-13.1a9.74,9.74,0,0,1,7.5-4.52,603.9,603.9,0,0,0,153.73-39.54c12.89-5.19,25.37-11.4,38-17.18C997,776.92,1000.55,775.11,1005.15,772.87Z" transform="translate(-398.71 -378.26)"/>
-        <path class="cls-3" d="M725.21,741c29.68-.09,54.31,24.24,54.34,53.7s-24.54,54-54.17,53.89a53.4,53.4,0,0,1-53.61-53.38C671.65,765,695.21,741.09,725.21,741Z" transform="translate(-398.71 -378.26)"/>
-    </svg>
+    </main>
 
-    <h1>Pokédex</h1>
-    <h5>The first 150 Pokémon are listet in this Pokédex</h5>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
 
-    <!-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"> Launch demo modal</button>
-
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-            ...
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-            </div>
-        </div>
-    </div> -->
-
-    <ul class="pokemon-list"></ul>
-
-    <div id='modal-container'></div>
 
     <script src="js/promise-polyfill.js"></script>
     <script src="js/fetch-polyfill.js"></script>
   
-	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
 
