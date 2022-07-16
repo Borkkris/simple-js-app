@@ -33,7 +33,7 @@ let pokemonRepository = (function() {
         button.classList.add('button'); //set a class to style the button in CSS
         button.classList.add("button"); // bootstrap
         button.classList.add("btn"); // bootstrap
-        button.classList.add("btn-primary"); // bootstrap
+        button.classList.add("btn-warning"); // bootstrap
 
         listpokemon.appendChild(button); //append a button to the list-element#listpokemon
         listpokemon.classList.add("group-listpokemon-item"); // bootstrap
