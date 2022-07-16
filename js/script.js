@@ -40,7 +40,7 @@ let pokemonRepository = (function() {
 
         pokemonList.appendChild(listpokemon); //append the listpokemon to the pokemonList
 
-        button.addEventListener("click", function(event) { // for my Tutor: why is the event parameter not read?
+        button.addEventListener("click", function(event) { // FOR TUTOR: why is the event parameter not read?
         showDetails(pokemon); // added eventListener to the variable 'button'
         });
     }
@@ -76,6 +76,7 @@ let pokemonRepository = (function() {
           item.height = details.height;
           item.weight = details.weight;
           item.types = details.types;
+          item.abilities = details.abilities;
         }).catch(function (e) {
           console.error(e);
         });
@@ -96,7 +97,9 @@ let pokemonRepository = (function() {
 
     let weightElement = $("<p>" + "Weight: " + pokemon.weight + "</p>");
 
-    let typesElement = $("<p>" + "Types: " + pokemon.types + "</p>");
+    let typesElement = $("<p>" + "Types: " + pokemon.types + "</p>"); // FOR TUTOR: why shown as "Types: [object Object],[object Object]"
+
+    let abilitiesElement = $("<p>" + "Abilities: " + pokemon.abilities + "</p>");// FOR TUTOR: why shown as "Abilities: [object Object],[object Object]"
 
     let pokemonImage = $('<img class="modal-img" style="width:50%">');
 
@@ -107,8 +110,9 @@ let pokemonRepository = (function() {
     modalBody.append(heightElement);
     modalBody.append(weightElement);
     modalBody.append(typesElement);
+    modalBody.append(abilitiesElement);
 
-    $("#pokemon-modal").modal("toggle");
+    $("#pokemon-modal").modal("toggle"); // FOR TUTOR what is this doing?
   }
 
   // reads the showModal function and wraps it ionto the showDetails function
@@ -124,8 +128,7 @@ let pokemonRepository = (function() {
         addListItem,
         loadList,
         loadDetails,
-        showDetails,
-        // showModal //(for the bootstrap Modal)
+        showDetails, // contains the modal
     };
 })();
 
