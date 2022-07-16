@@ -16,9 +16,22 @@ body {
   grid-template-columns: auto;
   justify-content:center ;
   background-color: var(--primary-color);
+  font-family: 'Courier New', Courier, monospace;
 }
 
-.navbar-expand-md  {
+.page-header > h5 {
+  text-align: center;
+  letter-spacing: 0.5px;
+  margin-bottom: 20px;
+} 
+
+h1 {
+  text-align: center;
+  font-weight: bold;
+  letter-spacing: 3px;
+}
+
+.navbar-expand-sm  {
 background-color: var(--secondary-color);
 border: 1px solid black;
 border-radius: 5px;
@@ -30,12 +43,6 @@ font-weight: bold;
   display: block;
   height: 60px;
   margin: 0 auto;
-}
-
-.page-header {
-  text-align: center;
-  letter-spacing: 0.5px;
-  margin-bottom: 20px;
 }
 
 .button {
