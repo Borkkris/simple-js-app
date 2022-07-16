@@ -85,7 +85,7 @@ let pokemonRepository = (function() {
     function showModal(pokemon) {
     let modalTitle = $(".modal-title");
     let modalBody = $(".modal-body");
-    let modalHeader = $(".modal-header");
+    // let modalHeader = $(".modal-header");
 
     modalTitle.empty();
     modalBody.empty();
