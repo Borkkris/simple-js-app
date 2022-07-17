@@ -87,6 +87,14 @@ let pokemonRepository = (function() {
     let modalTitle = $(".modal-title");
     let modalBody = $(".modal-body");
     // let modalHeader = $(".modal-header");
+    let types = [];
+    pokemon.types.map (function (object) {
+    types.push(object.type.name);
+    });
+    let abilities = [];
+    pokemon.abilities.map(function(object){
+    abilities.push(object.ability.name);
+    });
 
     modalTitle.empty();
     modalBody.empty();
@@ -97,16 +105,6 @@ let pokemonRepository = (function() {
 
     let weightElement = $("<p>" + "Weight: " + pokemon.weight + "</p>");
 
-    let types = [];
-    pokemon.types.map (function (object) {
-    types.push(object.type.name);
-    });
-
-    let abilities = [];
-    pokemon.abilities.map(function(object){
-    abilities.push(object.ability.name);
-    });
-
     let typesElement = $("<p>" + "Types: " + types + "</p>"); // FOR TUTOR: why shown as "Types: [object Object],[object Object]"
 
     let abilitiesElement = $("<p>" + "Abilities: " + abilities + "</p>");// FOR TUTOR: why shown as "Abilities: [object Object],[object Object]"
@@ -115,6 +113,7 @@ let pokemonRepository = (function() {
 
     pokemonImage.attr("src", pokemon.imageUrl);
 
+    // appends all elements to the parts in the modal
     modalTitle.append(nameElement);
     modalBody.append(pokemonImage);
     modalBody.append(heightElement);
