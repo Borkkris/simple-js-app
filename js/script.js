@@ -97,9 +97,19 @@ let pokemonRepository = (function() {
 
     let weightElement = $("<p>" + "Weight: " + pokemon.weight + "</p>");
 
-    let typesElement = $("<p>" + "Types: " + pokemon.types + "</p>"); // FOR TUTOR: why shown as "Types: [object Object],[object Object]"
+    let types = [];
+    pokemon.types.map (function (object) {
+    types.push(object.type.name);
+    });
 
-    let abilitiesElement = $("<p>" + "Abilities: " + pokemon.abilities + "</p>");// FOR TUTOR: why shown as "Abilities: [object Object],[object Object]"
+    let abilities = [];
+    pokemon.abilities.map(function(object){
+    abilities.push(object.ability.name);
+    });
+
+    let typesElement = $("<p>" + "Types: " + types + "</p>"); // FOR TUTOR: why shown as "Types: [object Object],[object Object]"
+
+    let abilitiesElement = $("<p>" + "Abilities: " + abilities + "</p>");// FOR TUTOR: why shown as "Abilities: [object Object],[object Object]"
 
     let pokemonImage = $('<img class="modal-img" style="width:50%">');
 
