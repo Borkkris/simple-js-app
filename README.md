@@ -13,7 +13,7 @@ By click on the Pokémon-name a modal opens which showes its name, height, type 
 * JQUERY
 
 ## Repository-link:
-[RepositoryPokédexApp](https://github.com/Borkkris/simple-js-app)
+[simple-js-app](https://github.com/Borkkris/simple-js-app)
 
 ## PokéAPI-Link:
 [PokéAPI](https://pokeapi.co/api/v2/pokemon/?limit=150)
