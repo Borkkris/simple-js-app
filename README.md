@@ -1,7 +1,7 @@
 # Pokédex - App
 
 This is my Pokedex-App I created as a fellow for CareerFoundry.
-It'll show all the pokemon with its name, height and type.
+It'll show the first 150 the pokemon with its name, height, type and abilities.
 
 ## Tech Tools:
 - HTML5
