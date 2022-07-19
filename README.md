@@ -1,19 +1,22 @@
 # Pokédex - App
 
 ##info
-This is my Pokedex-App I created as a fellow for CareerFoundry.
-It'll show the first 150 the pokemon.
-By click on the Pokémon name a modal opens which showes its name, height, type and abilities.
+This is my Pokédex-App I created as a fellow for CareerFoundry.
+It'll show the first 150 Pokémon.
+By click on the Pokémon-name a modal opens which showes its name, height, type and abilities.
 
 ## Built with:
 * HTML5
 * CSS3
-* JS
+* vanilla JS
 * Bootstrap
 * JQUERY
 
 ## Repository-link  
 https://github.com/Borkkris/simple-js-app
+
+## API-Link
+https://pokeapi.co/api/v2/pokemon/?limit=150
 
 ## Screenshots:
 ### Desktop-Version
