@@ -13,7 +13,7 @@ It'll show all the pokemon with its name, height and type.
 ![Screenshot Index.html](screenshots/desktop_Pokedex.png "Screenshot Pokédex Desktop")
 ![Screenshot Index.html](screenshots/Desktop_Modal.png "Screenshot Modal Desktop")
 
-### Mobil-Version
+### Mobile-Version
 ![Screenshot Index.html](screenshots/mobile_pokedex.png "Screenshot Pokedex Mobil")
 ![Screenshot Index.html](screenshots/mobile_pokedex_2.PNG "Screenshot Pokedex Mobile screen horizontal")
 ![Screenshot Index.html](screenshots/mobile_modal.png "Screenshot Modal Mobile")
