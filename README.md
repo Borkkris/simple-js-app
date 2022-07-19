@@ -1,4 +1,4 @@
-# Christians simple-js-app Pokedex
+# Pokedex - App
 
 This is my Pokedex-App I created as a fellow for CareerFoundry.
 It'll show all the pokemon with its name, height and type.
