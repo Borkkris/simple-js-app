@@ -29,3 +29,5 @@ https://borkkris.github.io/simple-js-app/
 
 ## contact:
 Christian Bork: christianbork.private@gmail.com
+
+<h3 align="center">project_title</h3>
