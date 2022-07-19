@@ -1,6 +1,6 @@
 # Pokédex - App
 
-##info
+## info
 This is my Pokédex-App I created as a fellow for CareerFoundry.
 It'll show the first 150 Pokémon.
 By click on the Pokémon-name a modal opens which showes its name, height, type and abilities.
