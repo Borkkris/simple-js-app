@@ -9,7 +9,7 @@ By click on the Pokémon name a modal opens which showes its name, height, type 
 - HTML5
 - CSS3
 - JS
-* [![Bootstrap][Bootstrap.com]][Bootstrap-url]
+- [![Bootstrap][Bootstrap.com]][Bootstrap-url]
 
 ## Repository-link  
 https://github.com/Borkkris/simple-js-app
