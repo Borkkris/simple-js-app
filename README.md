@@ -8,6 +8,9 @@ It'll show the first 150 the pokemon with its name, height, type and abilities.
 - CSS3
 - JS
 
+## repo_name
+git clone https://github.com/Borkkris/simple-js-app
+
 ## Screenshots:
 ### Desktop-Version
 ![Screenshot Index.html](screenshots/desktop_Pokedex.png "Screenshot Pokédex Desktop")
@@ -20,3 +23,6 @@ It'll show the first 150 the pokemon with its name, height, type and abilities.
 
 ## Link:
 https://borkkris.github.io/simple-js-app/
+
+## contact:
+Christian Bork: christianbork.private@gmail.com
