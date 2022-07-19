@@ -9,7 +9,14 @@ It'll show all the pokemon with its name, height and type.
 - JS
 
 ##Screenshot:
-> ![Screenshot Index.html](website_portfolio_index_html_screenshot.png "Screenshot Index.html")
+Desktop-Version
+![Screenshot Index.html](screenshots/desktop_Pokedex.png"Screenshot Index.html")
+![Screenshot Index.html](screenshots/Desktop_Modal.png"Screenshot Index.html")
+
+Mobil-Version
+![Screenshot Index.html](screenshots/mobil_pokedex.PNG"Screenshot Index.html")
+![Screenshot Index.html](screenshots/mobil_modal.PNG"Screenshot Index.html")
+![Screenshot Index.html](screenshots/mobil_pokedex_2.PNG"Screenshot Index.html")
 
 ##Link:
 https://borkkris.github.io/simple-js-app/
