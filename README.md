@@ -3,12 +3,12 @@
 This is my Pokedex-App I created as a fellow for CareerFoundry.
 It'll show all the pokemon with its name, height and type.
 
-##Tech Tools:
+#Tech Tools:
 - HTML5
 - CSS3
 - JS
 
-##Screenshot:
+#Screenshot:
 Desktop-Version
 ![Screenshot Index.html](screenshots/desktop_Pokedex.png "Screenshot Pokédex Desktop")
 ![Screenshot Index.html](screenshots/Desktop_Modal.png "Screenshot Modal Desktop")
