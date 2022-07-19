@@ -15,8 +15,8 @@ By click on the Pokémon-name a modal opens which showes its name, height, type 
 ## Repository-link:
 https://github.com/Borkkris/simple-js-app
 
-## API-Link:
-https://pokeapi.co/api/v2/pokemon/?limit=150
+## PokéAPI-Link:
+[PokéAPI](https://pokeapi.co/api/v2/pokemon/?limit=150)
 
 ## Screenshots:
 ### Desktop-Version:
