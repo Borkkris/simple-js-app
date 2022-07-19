@@ -6,10 +6,11 @@ It'll show the first 150 the pokemon.
 By click on the Pokémon name a modal opens which showes its name, height, type and abilities.
 
 ## Tech Tools:
-- HTML5
-- CSS3
-- JS
-- ![Bootstrap](Bootstrap.com "Bootstrap-url")
+* HTML5
+* CSS3
+* JS
+* [![Bootstrap][Bootstrap.com]][Bootstrap-url]
+* [![JQuery][JQuery.com]][JQuery-url]
 
 ## Repository-link  
 https://github.com/Borkkris/simple-js-app
