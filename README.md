@@ -5,7 +5,7 @@ This is my Pokedex-App I created as a fellow for CareerFoundry.
 It'll show the first 150 the pokemon.
 By click on the Pokémon name a modal opens which showes its name, height, type and abilities.
 
-## Builkt with:
+## Built with:
 * HTML5
 * CSS3
 * JS
