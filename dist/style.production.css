@@ -1,0 +1,117 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
+:root {
+    --primary-color: rgb(187, 84, 84);
+    --secondary-color: rgb(185, 134, 134);
+    --tertiary-color: rgb(237, 191, 73);
+    --text-color: white;
+}
+
+* {
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+body {
+  padding: 20px;
+  font-size: 16px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: auto;
+  grid-template-columns: auto;
+  -webkit-box-pack:center ;
+      -ms-flex-pack:center ;
+          justify-content:center ;
+  background-color: var(--primary-color);
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.page-header > h5 {
+  text-align: center;
+  letter-spacing: 0.5px;
+  margin-bottom: 20px;
+} 
+
+h1 {
+  text-align: center;
+  font-weight: bold;
+  letter-spacing: 3px;
+}
+
+.navbar-expand-sm  {
+background-color: var(--secondary-color);
+border: 1px solid black;
+border-radius: 5px;
+margin-bottom: 20px;
+font-weight: bold;
+}
+
+#Pokeball{
+  display: block;
+  height: 60px;
+  margin: 0 auto;
+}
+
+.button {
+  background-color: var(--secondary-color);
+  color: black;
+  font-weight: bold;
+  padding: 16px 30px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  -o-transition-duration: 0.4s;
+     transition-duration: 0.4s;
+  cursor: pointer;
+  border: 2px solid #000000;
+  border-radius: 5px;
+  -webkit-transition: all 0.6s;
+  -o-transition: all 0.6s;
+  transition: all 0.6s;
+  width:100%;
+  margin-bottom: 3px;
+}
+
+.button:hover {
+  background-color: var(--secondary-color);
+  color: var(--tertiary-color);
+  border: 2px solid var(--tertiary-color);
+}
+
+p {
+  width: auto;
+  letter-spacing: 1px;
+  margin:0;
+  text-align: center;
+}
+
+.list-group {
+  margin: 0;
+  list-style: none;
+}
+
+.modal-content {
+  background-color: var(--tertiary-color);
+}
+
+.modal-header {
+  background-color: var(--primary-color);
+}
+
+.modal-footer {
+  background-color: var(--secondary-color);
+}
+
+/* centeres the img */
+img { 
+  display: block; 
+  margin: auto; 
+  width: 20%; 
+}
