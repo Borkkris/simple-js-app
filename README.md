@@ -14,9 +14,9 @@ It'll show all the pokemon with its name, height and type.
 ![Screenshot Index.html](screenshots/Desktop_Modal.png "Screenshot Modal Desktop")
 
 ### Mobil-Version
-![Screenshot Index.html](screenshots/mobil_pokedex.png "Screenshot Pokédex Mobil")
-![Screenshot Index.html](screenshots/mobil_modal.png "Screenshot Modal Mobil")
-![Screenshot Index.html](screenshots/mobil_pokedex_2.PNG "Screenshot Pokedex Mobil screen horizontal")
+![Screenshot Index.html](screenshots/mobile_pokedex.png "Screenshot Pokedex Mobil")
+![Screenshot Index.html](screenshots/mobile_pokedex_2.PNG "Screenshot Pokedex Mobile screen horizontal")
+![Screenshot Index.html](screenshots/mobile_modal.png "Screenshot Modal Mobile")
 
 ## Link:
 https://borkkris.github.io/simple-js-app/
