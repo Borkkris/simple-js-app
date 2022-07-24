@@ -1,16 +1,16 @@
 //wrapping my pokemonList-array in an IIFE from Exercise 5
 
-let pokemonRepository = (function() {
-    let pokemonList=[];
+const pokemonRepository = (function() {
+    const pokemonList=[];
 
-    let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
+    const API_URL = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
 
     //allows addition of pokemon - restricted if they don't fit the format
     function add(pokemon) {
         if (
             typeof pokemon === 'object' &&  //when type from 'pokemon' is a object
             'name' in pokemon &&            // and "name" in 'pokemon'              // and "types" in 'pokemon'
-            "detailsUrl" in pokemon
+            'detailsUrl' in pokemon
         ) {
             pokemonList.push(pokemon);         // then push it to pokemonList
         }   else {
@@ -25,22 +25,19 @@ let pokemonRepository = (function() {
     //DOM manipulation - adds elements using bootstrap, appends them to elements on the dom, then applies a function
 	  //to load the information from the showDetails function (which loads information from the API and shows the modal).
     function addListItem(pokemon) { //from Exercise 6
-        let pokemonList = document.querySelector('.pokemon-list'); //selects the list with the class pokemon-list from the HTML
-        let listpokemon = document.createElement('li'); //(created a new variable: listpokemon) an li element in the parent Element
+        const pokemonList = document.querySelector('.pokemon-list'); //selects the list with the class pokemon-list from the HTML
+        const listpokemon = document.createElement('li'); //(created a new variable: listpokemon) an li element in the parent Element
 
         let button = document.createElement('button'); //created a button in the li Element
         button.innerText = pokemon.name; //rendered the button to show the pokemon name
-        button.classList.add('button'); //set a class to style the button in CSS
-        button.classList.add("button"); // bootstrap
-        button.classList.add("btn"); // bootstrap
-        button.classList.add("btn-warning"); // bootstrap
+        button.classList.add('button', 'btn', 'btn-warning'); //set a class to style the button in CSS
 
         listpokemon.appendChild(button); //append a button to the list-element#listpokemon
-        listpokemon.classList.add("group-listpokemon-item"); // bootstrap
+        listpokemon.classList.add('group-listpokemon-item'); // bootstrap
 
         pokemonList.appendChild(listpokemon); //append the listpokemon to the pokemonList
 
-        button.addEventListener("click", function(event) { // FOR TUTOR: why is the event parameter not read?
+        button.addEventListener('click', function(event) { // FOR TUTOR: why is the event parameter not read?
         showDetails(pokemon); // added eventListener to the variable 'button'
         });
     }
@@ -48,11 +45,11 @@ let pokemonRepository = (function() {
     //fetch-function for API
     //Returns all the pokemon in the console
     function loadList() {
-        return fetch(apiUrl).then(function (response) { //the promise
+        return fetch(API_URL).then(function (response) { //the promise
         return response.json();//convert the responde to a json
         }).then(function (json) {
         json.results.forEach(function (item) { //take the json and run a forEach loop on it (parameter: item)
-            let pokemon = { //lets map a Pokemon variable
+            const pokemon = { //lets map a Pokemon variable
             name: item.name, //return the name in the parameter item (first key)
             detailsUrl: item.url //return the url (the pokemon details)
             };
@@ -82,54 +79,6 @@ let pokemonRepository = (function() {
         });
     }
 
-    // Bootstrap Modal
-    function showModal(pokemon) {
-    let modalTitle = $(".modal-title");
-    let modalBody = $(".modal-body");
-    // let modalHeader = $(".modal-header");
-    let types = [];
-    pokemon.types.map (function (object) {
-    types.push(object.type.name);
-    });
-    let abilities = [];
-    pokemon.abilities.map(function(object){
-    abilities.push(object.ability.name);
-    });
-
-    modalTitle.empty();
-    modalBody.empty();
-
-    let nameElement = $("<h1>" + pokemon.name + "</h1>");
-
-    let heightElement = $("<p>" + "Height: " + pokemon.height + "</p>");
-
-    let weightElement = $("<p>" + "Weight: " + pokemon.weight + "</p>");
-
-    let typesElement = $("<p>" + "Types: " + types + "</p>"); // FOR TUTOR: why shown as "Types: [object Object],[object Object]"
-
-    let abilitiesElement = $("<p>" + "Abilities: " + abilities + "</p>");// FOR TUTOR: why shown as "Abilities: [object Object],[object Object]"
-
-    let pokemonImage = $('<img class="modal-img" style="width:50%">');
-
-    pokemonImage.attr("src", pokemon.imageUrl);
-
-    // appends all elements to the parts in the modal
-    modalTitle.append(nameElement);
-    modalBody.append(pokemonImage);
-    modalBody.append(heightElement);
-    modalBody.append(weightElement);
-    modalBody.append(typesElement);
-    modalBody.append(abilitiesElement);
-
-    $("#pokemon-modal").modal("toggle"); // FOR TUTOR what is this doing?
-  }
-
-  // reads the showModal function and wraps it ionto the showDetails function
-  function showDetails(pokemon) {
-    loadDetails(pokemon).then(function() {
-      showModal(pokemon);
-    });
-  }
     //return - short if the keys are the same
     return {
         add,
