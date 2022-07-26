@@ -85,6 +85,19 @@ font-weight: bold;
   border: 2px solid var(--tertiary-color);
 }
 
+.btn-outline-warning{
+  border-radius: 5px;
+}
+
+.my-lg-0{
+  width: auto;
+}
+
+.my-sm-0 {
+  color:black;
+  font-weight: bold;
+}
+
 p {
   width: auto;
   letter-spacing: 1px;
@@ -114,4 +127,14 @@ img {
   display: block; 
   margin: auto; 
   width: 20%; 
+}
+
+.justify-content-center{
+  margin-top: 20px;
+}
+
+.page-item{
+  background-color: var(--secondary-color);
+  color: black;
+  font-weight: bold;
 }
