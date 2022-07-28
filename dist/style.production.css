@@ -20,13 +20,6 @@
 body {
   padding: 20px;
   font-size: 16px;
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: auto;
-  grid-template-columns: auto;
-  -webkit-box-pack:center ;
-      -ms-flex-pack:center ;
-          justify-content:center ;
   background-color: var(--primary-color);
   font-family: 'Courier New', Courier, monospace;
 }

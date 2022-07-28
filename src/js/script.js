@@ -1,5 +1,5 @@
 //wrapping my pokemonList-array in an IIFE from Exercise 5
-
+// JS code without the Modal (Modal in ui.js)
 const pokemonRepository = (function() {
     const pokemonList=[];
 
@@ -40,6 +40,21 @@ const pokemonRepository = (function() {
         button.addEventListener('click', function(event) { // FOR TUTOR: why is the event parameter not read?
         showDetails(pokemon); // added eventListener to the variable 'button'
         });
+    }
+
+    function addPokemonCards(pokemon) {
+        const container = document.querySelector('.pokemon-container');
+        const pColumnCard = document.createElement('div');
+        pColumnCard.classList.add("col-lg-3", "col-md-4", "col-sm-6", "card");
+
+        const pCardBody = document.createElement('div');
+        pCardBody.classList.add('card-body');
+        pCardBody.innerText = pokemon.name;
+
+        pColumnCard.appendChild(pCardBody);
+        container.appendChild(pColumnCard);
+
+        //Modal is not showing. Card needs to be a button and show the modal when clicking on it
     }
 
     //fetch-function for API
@@ -84,11 +99,27 @@ const pokemonRepository = (function() {
         add,
         getAll,
         addListItem,
+        addPokemonCards,
         loadList,
         loadDetails,
-        showDetails, // contains the modal
+        // showDetails, // contains the modal
     };
 })();
+
+// when typing in the keys it'll display the pokemon cards which contains the KEy-value
+const searchInput = document.querySelector('.search-input');
+searchInput.addEventListener('input', function(e) {
+    const key = e.target.value;
+    const pokemonCards = document.querySelectorAll('.card-body');
+    pokemonCards.forEach(function(p) {
+        if (!p.innerText.includes(key)) {
+            p.parentNode.style.display = "none";
+        }
+        else {
+            p.parentNode.style.display = "block";
+        }
+    });
+});
 
 //final calling of functions to execute repository
 
@@ -97,6 +128,7 @@ pokemonRepository.loadList().then(function() {
   // Now the data is loaded!
   //forEach loop from Exercise 5 - runs over the pokemonRepository and the addListItem-function in a loop
   pokemonRepository.getAll().forEach(function(pokemon){
-    pokemonRepository.addListItem(pokemon);
+    // pokemonRepository.addListItem(pokemon);
+    pokemonRepository.addPokemonCards(pokemon);
   });
 });
