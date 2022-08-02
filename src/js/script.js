@@ -1,9 +1,11 @@
 //wrapping my pokemonList-array in an IIFE from Exercise 5
 // JS code without the Modal (Modal in ui.js)
+const prevBtn = document.querySelector('.prev-btn');
+const nxtBtn = document.querySelector('.nxt-btn');
 const pokemonRepository = (function() {
     const pokemonList=[];
-
-    const API_URL = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
+    let prevURL = null;
+    let nextURL = null;
 
     //allows addition of pokemon - restricted if they don't fit the format
     function add(pokemon) {
@@ -22,26 +24,7 @@ const pokemonRepository = (function() {
         return pokemonList;
     }
 
-    //DOM manipulation - adds elements using bootstrap, appends them to elements on the dom, then applies a function
-	  //to load the information from the showDetails function (which loads information from the API and shows the modal).
-    function addListItem(pokemon) { //from Exercise 6
-        const pokemonList = document.querySelector('.pokemon-list'); //selects the list with the class pokemon-list from the HTML
-        const listpokemon = document.createElement('li'); //(created a new variable: listpokemon) an li element in the parent Element
-
-        let button = document.createElement('button'); //created a button in the li Element
-        button.innerText = pokemon.name; //rendered the button to show the pokemon name
-        button.classList.add('button', 'btn', 'btn-warning'); //set a class to style the button in CSS
-
-        listpokemon.appendChild(button); //append a button to the list-element#listpokemon
-        listpokemon.classList.add('group-listpokemon-item'); // bootstrap
-
-        pokemonList.appendChild(listpokemon); //append the listpokemon to the pokemonList
-
-        button.addEventListener('click', function(event) { // FOR TUTOR: why is the event parameter not read?
-        showDetails(pokemon); // added eventListener to the variable 'button'
-        });
-    }
-
+    // added the Pokemon Cards with classes, names and event listener
     function addPokemonCards(pokemon) {
         const container = document.querySelector('.pokemon-container');
         const pColumnCard = document.createElement('div');
@@ -51,6 +34,11 @@ const pokemonRepository = (function() {
         pCardBody.classList.add('card-body');
         pCardBody.innerText = pokemon.name;
 
+        // Attach a event listerner (click event) for each card-body
+        pColumnCard.addEventListener('click', (evt) => {
+            showDetails(pokemon);
+        });
+
         pColumnCard.appendChild(pCardBody);
         container.appendChild(pColumnCard);
 
@@ -59,20 +47,34 @@ const pokemonRepository = (function() {
 
     //fetch-function for API
     //Returns all the pokemon in the console
-    function loadList() {
-        return fetch(API_URL).then(function (response) { //the promise
+    function loadList(apiUrl) {
+        return fetch(apiUrl).then(function (response) { //the promise
         return response.json();//convert the responde to a json
         }).then(function (json) {
-        json.results.forEach(function (item) { //take the json and run a forEach loop on it (parameter: item)
-            const pokemon = { //lets map a Pokemon variable
-            name: item.name, //return the name in the parameter item (first key)
-            detailsUrl: item.url //return the url (the pokemon details)
-            };
-            add(pokemon);//
-            console.log(pokemon);
+            prevURL = json.previous;
+            nextURL = json.next;
+
+            //hides the previous and next button when there is no URL for each anymore (first and last page)
+            hideButtonsPagination()
+
+            clearPokemons();
+            json.results.forEach(function (item) { //take the json and run a forEach loop on it (parameter: item)
+                const pokemon = { //lets map a Pokemon variable
+                name: item.name, //return the name in the parameter item (first key)
+                detailsUrl: item.url //return the url (the pokemon details)
+                };
+                add(pokemon);//
+                console.log(pokemon);
+                });
+            }).catch(function (e) {
+            console.error(e);
             });
-        }).catch(function (e) {
-          console.error(e);
+    }
+
+    // reads the showModal function and wraps it ionto the showDetails function
+    function showDetails(pokemon) {
+        loadDetails(pokemon).then(function() {
+        showModal(pokemon);
         });
     }
 
@@ -94,19 +96,52 @@ const pokemonRepository = (function() {
         });
     }
 
+    function getPrevURL() {
+        return prevURL;
+    }
+
+    function getNextURL() {
+        return nextURL;
+    }
+
+    // when there is no previous URL it adds the class "disabled-btn" to disable the previous button
+    function hideButtonsPagination() {
+        if (!prevURL) {
+            prevBtn.classList.add('invisible');
+        }
+        else {
+            prevBtn.classList.remove('invisible');
+        }
+    // when there is no next URL it adds the class "disabled-btn" to disable the next button
+        if (!nextURL) {
+            nxtBtn.classList.add('invisible');
+        }
+        else {
+            nxtBtn.classList.remove('invisible');
+        }
+    }
+
+    function clearPokemons() {
+        pokemonList.length = 0;
+        document.querySelector('.pokemon-container').innerHTML = "";
+    }
+
     //return - short if the keys are the same
     return {
         add,
         getAll,
-        addListItem,
         addPokemonCards,
         loadList,
         loadDetails,
-        // showDetails, // contains the modal
+        getPrevURL,
+        getNextURL,
+        clearPokemons,
+        hideButtonsPagination,
     };
 })();
 
-// when typing in the keys it'll display the pokemon cards which contains the KEy-value
+// when typing in the keys it'll display the pokemon cards which contain the values
+// OPTIMIZIE LATER: you can only search for pokemon which are displayed within the 60 pokemon on the page
 const searchInput = document.querySelector('.search-input');
 searchInput.addEventListener('input', function(e) {
     const key = e.target.value;
@@ -123,12 +158,31 @@ searchInput.addEventListener('input', function(e) {
 
 //final calling of functions to execute repository
 
-//adds an object to pokemonRepository
-pokemonRepository.loadList().then(function() {
-  // Now the data is loaded!
-  //forEach loop from Exercise 5 - runs over the pokemonRepository and the addListItem-function in a loop
-  pokemonRepository.getAll().forEach(function(pokemon){
-    // pokemonRepository.addListItem(pokemon);
-    pokemonRepository.addPokemonCards(pokemon);
-  });
+prevBtn.addEventListener('click', (e) => {
+    const url = pokemonRepository.getPrevURL();
+    if(url) {
+        loadPokemons(url);
+    }
 });
+
+nxtBtn.addEventListener('click', (e) => {
+    const url = pokemonRepository.getNextURL();
+    if(url) {
+        loadPokemons(url);
+    }
+});
+
+//adds an object to pokemonRepository
+const START_API_URL = 'https://pokeapi.co/api/v2/pokemon/?limit=60';
+function loadPokemons(apiUrl) {
+    pokemonRepository.loadList(apiUrl).then(function() {
+        // Now the data is loaded!
+        //forEach loop from Exercise 5 - runs over the pokemonRepository and the addListItem-function in a loop
+        pokemonRepository.getAll().forEach(function(pokemon){
+            // pokemonRepository.addListItem(pokemon);
+            pokemonRepository.addPokemonCards(pokemon);
+        });
+    });
+}
+// loads the first 60 pokemon URL when the page is loaded
+loadPokemons(START_API_URL);
