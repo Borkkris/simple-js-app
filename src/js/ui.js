@@ -39,10 +39,3 @@
 
     $("#pokemon-modal").modal("toggle");
   }
-
-  // reads the showModal function and wraps it ionto the showDetails function
-  function showDetails(pokemon) {
-    loadDetails(pokemon).then(function() {
-      showModal(pokemon);
-    });
-  }
