@@ -1,5 +1,5 @@
     // Bootstrap Modal
-    function showModal(pokemon) {
+  function showModal(pokemon) {
     let modalTitle = $('.modal-title');
     let modalBody = $('.modal-body');
     // let modalHeader = $(".modal-header");

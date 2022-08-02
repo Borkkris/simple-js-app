@@ -33,7 +33,7 @@ const pokemonRepository = (function() {
         const pCardBody = document.createElement('div');
         pCardBody.classList.add('card-body');
         pCardBody.innerText = pokemon.name;
-
+        
         // Attach a event listerner (click event) for each card-body
         pColumnCard.addEventListener('click', (evt) => {
             showDetails(pokemon);
@@ -41,8 +41,6 @@ const pokemonRepository = (function() {
 
         pColumnCard.appendChild(pCardBody);
         container.appendChild(pColumnCard);
-
-        //Modal is not showing. Card needs to be a button and show the modal when clicking on it
     }
 
     //fetch-function for API
@@ -181,6 +179,7 @@ function loadPokemons(apiUrl) {
         pokemonRepository.getAll().forEach(function(pokemon){
             // pokemonRepository.addListItem(pokemon);
             pokemonRepository.addPokemonCards(pokemon);
+                
         });
     });
 }
