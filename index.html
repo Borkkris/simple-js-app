@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" href="src/css/reset.css">
     <link rel="stylesheet" type="text/css" href="dist/style.production.css">
 
-    <title>Pokédex - 150 Pokémon</title>
+    <title>Pokédex - All Pokémon</title>
 </head>
 
 <body>
@@ -60,7 +60,7 @@
         </svg>
 
         <h1>Pokédex</h1>
-        <h5>The first 150 Pokémon are listet in this Pokédex</h5>
+        <h5>Find the Pokémon you are looking for in this Pokédex!</h5>
 
      </header>
 
@@ -93,12 +93,8 @@
         
         <nav aria-label="Page navigation example">
             <ul class="pagination justify-content-center">
-                <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-                <li class="page-item"><a class="page-link" href="#">1</a></li> <!--shows the first 50 pokémon-->
-                <li class="page-item"><a class="page-link" href="#">2</a></li> <!--shows the next 50 pokémon-->
-                <li class="page-item"><a class="page-link" href="#">3</a></li> <!--shows the last 50 pokémon-->
-                <li class="page-item"><a class="page-link" href="#">Top</a></li> 
-                <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                <li class="page-item"><button class="prev-btn page-link" href="#">Previous</button></li>
+                <li class="page-item"><button class="nxt-btn page-link" href="#">Next</button></li>
             </ul>
         </nav>
     </main>
@@ -112,7 +108,9 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
     <!-- script file -->
-    <script src="dist/min-ui.js"></script>
-    <script src="dist/min-script.js"></script>
+    <!-- <script src="dist/min-ui.js"></script>
+    <script src="dist/min-script.js"></script> -->
+    <script src="src/js/ui.js"></script>
+    <script src="src/js/script.js"></script>
 </body>
 </html>
