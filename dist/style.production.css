@@ -131,3 +131,7 @@ img {
   color: black;
   font-weight: bold;
 }
+
+.invisible {
+  display: none;
+}
