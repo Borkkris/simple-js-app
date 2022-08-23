@@ -95,6 +95,17 @@ const pokemonRepository = (function() {
     }
 
     function getPrevURL() {
+        console.log('inside prevurl')
+        // Just to handle API's mistake
+        if (prevURL) {
+            const limit = prevURL.split('=')[2];
+            console.log('limit', limit)
+            if (limit !== '60') {
+                prevURL = prevURL.replace(limit, '60');
+                console.log('Prevurl updated', prevURL);
+            }
+        }
+        console.log('Normal return', prevURL)
         return prevURL;
     }
 
